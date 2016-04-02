@@ -12,4 +12,4 @@ User.create!(username: "bob", email: "bob@gmail.com", password: "password")
 Card.create!(greeting: "hello", message: "I miss you!")
 Recipient.create!(recipient_id: 2, sender_id: 1)
 UserCard.create!(user_id: 1, card_id: 1)
-Template.create!(image: "https://robohash.org/my-own-slug.png?size=50x50", card_id: 1)
+5.times{Template.create!(image: "https://robohash.org/my-own-slug.png?size=50x50", card_id: 1)}
