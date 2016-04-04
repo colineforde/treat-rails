@@ -3256,3 +3256,22 @@ Processing by CardsController#sent as HTML
   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
   [1m[35mCard Load (0.1ms)[0m  SELECT  "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT 1  [["id", 4]]
 Completed 200 OK in 45ms (Views: 0.5ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/cards/sent" for ::1 at 2016-04-03 19:17:17 -0700
+Processing by CardsController#sent as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUserCard Load (0.3ms)[0m  SELECT "user_cards".* FROM "user_cards" WHERE "user_cards"."user_id" = $1  [["user_id", 1]]
+  [1m[36mRecipient Load (0.2ms)[0m  [1mSELECT  "recipients".* FROM "recipients" WHERE "recipients"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCard Load (0.2ms)[0m  [1mSELECT  "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "recipients".* FROM "recipients" WHERE "recipients"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCard Load (0.2ms)[0m  SELECT  "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "recipients".* FROM "recipients" WHERE "recipients"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCard Load (0.2ms)[0m  [1mSELECT  "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "recipients".* FROM "recipients" WHERE "recipients"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCard Load (0.1ms)[0m  SELECT  "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT 1  [["id", 4]]
+Completed 200 OK in 36ms (Views: 1.2ms | ActiveRecord: 2.7ms)

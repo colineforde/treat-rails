@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :cards
   resources :templates
   root 'welcome#index'
+  resources :sessions, only: [:create, :destroy]
 
 # 
   # Example of regular route:
