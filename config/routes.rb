@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     get 'sent'
   end
   resources :cards
+  resources :users
   resources :templates
   root 'welcome#index'
   resources :sessions, only: [:create, :destroy]
