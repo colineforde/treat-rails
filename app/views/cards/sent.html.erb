@@ -1,0 +1,6 @@
+Cards sent:
+<%@cards.each do |card| %>
+	<p><%= User.find(card.recipient.id).username%> received: <br>
+	Greeting: <%= card.card.greeting%><br>
+	Message:<%= card.card.message%></p>	
+<%end%>

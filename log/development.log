@@ -1018,3 +1018,1196 @@ Started GET "/templates" for ::1 at 2016-04-02 12:43:55 -0700
 Processing by TemplatesController#index as HTML
   [1m[35mTemplate Load (0.5ms)[0m  SELECT "templates".* FROM "templates"
 Completed 200 OK in 26ms (Views: 11.1ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/" for ::1 at 2016-04-03 16:00:48 -0700
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (27.3ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 141ms (Views: 2.0ms | ActiveRecord: 91.5ms)
+  [1m[36mCard Load (1.4ms)[0m  [1mSELECT "cards".* FROM "cards"[0m
+  [1m[35mUserCard Load (0.8ms)[0m  SELECT "user_cards".* FROM "user_cards"
+  [1m[36mUserCard Load (0.6ms)[0m  [1mSELECT  "user_cards".* FROM "user_cards"  ORDER BY "user_cards"."id" ASC LIMIT 1[0m
+  [1m[35mUserCard Load (0.4ms)[0m  SELECT  "user_cards".* FROM "user_cards"  ORDER BY "user_cards"."id" ASC LIMIT 1
+  [1m[36mUserCard Load (0.3ms)[0m  [1mSELECT "user_cards".* FROM "user_cards" WHERE "user_cards"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (24.2ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'cards'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.5ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'recipients'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.5ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'templates'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.5ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'user_cards'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.5ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (6.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (23.6ms)[0m  INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["username", "coline"], ["email", "coline@gmail.com"], ["password", "password"], ["created_at", "2016-04-03 23:10:13.353186"], ["updated_at", "2016-04-03 23:10:13.353186"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "bob"], ["email", "bob@gmail.com"], ["password", "password"], ["created_at", "2016-04-03 23:10:13.399097"], ["updated_at", "2016-04-03 23:10:13.399097"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "jacklyn_jacobson"], ["password", "password"], ["created_at", "2016-04-03 23:10:13.862526"], ["updated_at", "2016-04-03 23:10:13.862526"]]
+  [1m[36m (6.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("username", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "deangelo.moore"], ["password", "password"], ["created_at", "2016-04-03 23:10:13.870512"], ["updated_at", "2016-04-03 23:10:13.870512"]]
+  [1m[35m (11.9ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "ernie.wisoky"], ["password", "password"], ["created_at", "2016-04-03 23:10:13.884074"], ["updated_at", "2016-04-03 23:10:13.884074"]]
+  [1m[36m (4.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("username", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "alan.heller"], ["password", "password"], ["created_at", "2016-04-03 23:10:13.890842"], ["updated_at", "2016-04-03 23:10:13.890842"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("username", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "josiane_simonis"], ["password", "password"], ["created_at", "2016-04-03 23:10:13.892853"], ["updated_at", "2016-04-03 23:10:13.892853"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "cards" ("greeting", "message", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["greeting", "hello"], ["message", "I miss you!"], ["created_at", "2016-04-03 23:10:13.903141"], ["updated_at", "2016-04-03 23:10:13.903141"]]
+  [1m[35m (6.0ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "cards" ("greeting", "message", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["greeting", "goodbye"], ["message", "I love you!"], ["created_at", "2016-04-03 23:10:13.911170"], ["updated_at", "2016-04-03 23:10:13.911170"]]
+  [1m[36m (6.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "cards" ("greeting", "message", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["greeting", "what's up"], ["message", "hello hello~"], ["created_at", "2016-04-03 23:10:13.918625"], ["updated_at", "2016-04-03 23:10:13.918625"]]
+  [1m[35m (3.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "cards" ("greeting", "message", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["greeting", "good to see you"], ["message", "come back soon!"], ["created_at", "2016-04-03 23:10:13.923690"], ["updated_at", "2016-04-03 23:10:13.923690"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "recipients" ("recipient_id", "sender_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["recipient_id", 2], ["sender_id", 1], ["created_at", "2016-04-03 23:10:13.929566"], ["updated_at", "2016-04-03 23:10:13.929566"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "recipients" ("recipient_id", "sender_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["recipient_id", 2], ["sender_id", 1], ["created_at", "2016-04-03 23:10:13.931637"], ["updated_at", "2016-04-03 23:10:13.931637"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "recipients" ("recipient_id", "sender_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["recipient_id", 2], ["sender_id", 1], ["created_at", "2016-04-03 23:10:13.933096"], ["updated_at", "2016-04-03 23:10:13.933096"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "recipients" ("recipient_id", "sender_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["recipient_id", 2], ["sender_id", 1], ["created_at", "2016-04-03 23:10:13.934561"], ["updated_at", "2016-04-03 23:10:13.934561"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "user_cards" ("user_id", "card_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["card_id", 1], ["created_at", "2016-04-03 23:10:13.941932"], ["updated_at", "2016-04-03 23:10:13.941932"]]
+  [1m[35m (11.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "user_cards" ("user_id", "card_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 1], ["card_id", 2], ["created_at", "2016-04-03 23:10:13.955460"], ["updated_at", "2016-04-03 23:10:13.955460"]]
+  [1m[36m (4.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "user_cards" ("user_id", "card_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["card_id", 3], ["created_at", "2016-04-03 23:10:13.961856"], ["updated_at", "2016-04-03 23:10:13.961856"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_cards" ("user_id", "card_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 1], ["card_id", 4], ["created_at", "2016-04-03 23:10:13.963520"], ["updated_at", "2016-04-03 23:10:13.963520"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "templates" ("image", "card_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["image", "https://robohash.org/my-own-slug.png?size=50x50"], ["card_id", 1], ["created_at", "2016-04-03 23:10:13.970837"], ["updated_at", "2016-04-03 23:10:13.970837"]]
+  [1m[35m (11.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "templates" ("image", "card_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["image", "https://robohash.org/my-own-slug.png?size=50x50"], ["card_id", 1], ["created_at", "2016-04-03 23:10:13.983999"], ["updated_at", "2016-04-03 23:10:13.983999"]]
+  [1m[36m (5.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "templates" ("image", "card_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["image", "https://robohash.org/my-own-slug.png?size=50x50"], ["card_id", 1], ["created_at", "2016-04-03 23:10:13.991581"], ["updated_at", "2016-04-03 23:10:13.991581"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "templates" ("image", "card_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["image", "https://robohash.org/my-own-slug.png?size=50x50"], ["card_id", 1], ["created_at", "2016-04-03 23:10:13.993312"], ["updated_at", "2016-04-03 23:10:13.993312"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "templates" ("image", "card_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["image", "https://robohash.org/my-own-slug.png?size=50x50"], ["card_id", 1], ["created_at", "2016-04-03 23:10:13.994834"], ["updated_at", "2016-04-03 23:10:13.994834"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (7.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.6ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20160401202921)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (25.9ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "username" character varying, "email" character varying, "password" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160401202921"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Migrating to CreateRecipients (20160401202925)
+  [1m[35m (5.9ms)[0m  BEGIN
+  [1m[36m (7.4ms)[0m  [1mCREATE TABLE "recipients" ("id" serial primary key, "sender_id" integer, "recipient_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160401202925"]]
+  [1m[36m (5.9ms)[0m  [1mCOMMIT[0m
+Migrating to CreateCards (20160401202940)
+  [1m[35m (5.8ms)[0m  BEGIN
+  [1m[36m (13.3ms)[0m  [1mCREATE TABLE "cards" ("id" serial primary key, "greeting" character varying, "message" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160401202940"]]
+  [1m[36m (4.7ms)[0m  [1mCOMMIT[0m
+Migrating to CreateUserCards (20160401205059)
+  [1m[35m (6.0ms)[0m  BEGIN
+  [1m[36m (7.9ms)[0m  [1mCREATE TABLE "user_cards" ("id" serial primary key, "user_id" integer, "card_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160401205059"]]
+  [1m[36m (11.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreateTemplates (20160401234008)
+  [1m[35m (6.0ms)[0m  BEGIN
+  [1m[36m (14.1ms)[0m  [1mCREATE TABLE "templates" ("id" serial primary key, "card_id" integer, "image" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160401234008"]]
+  [1m[36m (4.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.1ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'cards'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.4ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'recipients'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.5ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'templates'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.5ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'user_cards'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.5ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["username", "coline"], ["email", "coline@gmail.com"], ["password", "password"], ["created_at", "2016-04-03 23:10:24.957192"], ["updated_at", "2016-04-03 23:10:24.957192"]]
+  [1m[36m (5.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "bob"], ["email", "bob@gmail.com"], ["password", "password"], ["created_at", "2016-04-03 23:10:24.964424"], ["updated_at", "2016-04-03 23:10:24.964424"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "alayna"], ["password", "password"], ["created_at", "2016-04-03 23:10:25.406607"], ["updated_at", "2016-04-03 23:10:25.406607"]]
+  [1m[36m (6.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("username", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "susan"], ["password", "password"], ["created_at", "2016-04-03 23:10:25.414804"], ["updated_at", "2016-04-03 23:10:25.414804"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "liam_anderson"], ["password", "password"], ["created_at", "2016-04-03 23:10:25.416648"], ["updated_at", "2016-04-03 23:10:25.416648"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("username", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "mervin"], ["password", "password"], ["created_at", "2016-04-03 23:10:25.418339"], ["updated_at", "2016-04-03 23:10:25.418339"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("username", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["username", "morgan"], ["password", "password"], ["created_at", "2016-04-03 23:10:25.419994"], ["updated_at", "2016-04-03 23:10:25.419994"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "cards" ("greeting", "message", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["greeting", "hello"], ["message", "I miss you!"], ["created_at", "2016-04-03 23:10:25.428868"], ["updated_at", "2016-04-03 23:10:25.428868"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "cards" ("greeting", "message", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["greeting", "goodbye"], ["message", "I love you!"], ["created_at", "2016-04-03 23:10:25.431163"], ["updated_at", "2016-04-03 23:10:25.431163"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "cards" ("greeting", "message", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["greeting", "what's up"], ["message", "hello hello~"], ["created_at", "2016-04-03 23:10:25.432551"], ["updated_at", "2016-04-03 23:10:25.432551"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "cards" ("greeting", "message", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["greeting", "good to see you"], ["message", "come back soon!"], ["created_at", "2016-04-03 23:10:25.433950"], ["updated_at", "2016-04-03 23:10:25.433950"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "recipients" ("recipient_id", "sender_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["recipient_id", 2], ["sender_id", 1], ["created_at", "2016-04-03 23:10:25.439795"], ["updated_at", "2016-04-03 23:10:25.439795"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "recipients" ("recipient_id", "sender_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["recipient_id", 2], ["sender_id", 1], ["created_at", "2016-04-03 23:10:25.442061"], ["updated_at", "2016-04-03 23:10:25.442061"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "recipients" ("recipient_id", "sender_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["recipient_id", 2], ["sender_id", 1], ["created_at", "2016-04-03 23:10:25.443588"], ["updated_at", "2016-04-03 23:10:25.443588"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "recipients" ("recipient_id", "sender_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["recipient_id", 2], ["sender_id", 1], ["created_at", "2016-04-03 23:10:25.445078"], ["updated_at", "2016-04-03 23:10:25.445078"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "user_cards" ("user_id", "card_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["card_id", 1], ["created_at", "2016-04-03 23:10:25.451978"], ["updated_at", "2016-04-03 23:10:25.451978"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "user_cards" ("user_id", "card_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 1], ["card_id", 2], ["created_at", "2016-04-03 23:10:25.454002"], ["updated_at", "2016-04-03 23:10:25.454002"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_cards" ("user_id", "card_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["card_id", 3], ["created_at", "2016-04-03 23:10:25.455603"], ["updated_at", "2016-04-03 23:10:25.455603"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "user_cards" ("user_id", "card_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 1], ["card_id", 4], ["created_at", "2016-04-03 23:10:25.457157"], ["updated_at", "2016-04-03 23:10:25.457157"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "templates" ("image", "card_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["image", "https://robohash.org/my-own-slug.png?size=50x50"], ["card_id", 1], ["created_at", "2016-04-03 23:10:25.463882"], ["updated_at", "2016-04-03 23:10:25.463882"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "templates" ("image", "card_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["image", "https://robohash.org/my-own-slug.png?size=50x50"], ["card_id", 1], ["created_at", "2016-04-03 23:10:25.465999"], ["updated_at", "2016-04-03 23:10:25.465999"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "templates" ("image", "card_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["image", "https://robohash.org/my-own-slug.png?size=50x50"], ["card_id", 1], ["created_at", "2016-04-03 23:10:25.467610"], ["updated_at", "2016-04-03 23:10:25.467610"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "templates" ("image", "card_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["image", "https://robohash.org/my-own-slug.png?size=50x50"], ["card_id", 1], ["created_at", "2016-04-03 23:10:25.469200"], ["updated_at", "2016-04-03 23:10:25.469200"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "templates" ("image", "card_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["image", "https://robohash.org/my-own-slug.png?size=50x50"], ["card_id", 1], ["created_at", "2016-04-03 23:10:25.471018"], ["updated_at", "2016-04-03 23:10:25.471018"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mUserCard Load (0.6ms)[0m  [1mSELECT "user_cards".* FROM "user_cards"[0m
+  [1m[35mUserCard Load (0.7ms)[0m  SELECT  "user_cards".* FROM "user_cards"  ORDER BY "user_cards"."id" ASC LIMIT 1
+  [1m[36mUserCard Load (0.4ms)[0m  [1mSELECT  "user_cards".* FROM "user_cards"  ORDER BY "user_cards"."id" ASC LIMIT 1[0m
+  [1m[35mUserCard Load (0.4ms)[0m  SELECT  "user_cards".* FROM "user_cards"  ORDER BY "user_cards"."id" ASC LIMIT 1
+  [1m[36mCard Load (0.3ms)[0m  [1mSELECT  "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUserCard Load (0.4ms)[0m  SELECT  "user_cards".* FROM "user_cards"  ORDER BY "user_cards"."id" ASC LIMIT 1
+  [1m[36mCard Load (0.3ms)[0m  [1mSELECT  "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUserCard Load (0.4ms)[0m  SELECT  "user_cards".* FROM "user_cards"  ORDER BY "user_cards"."id" ASC LIMIT 1
+  [1m[36mCard Load (0.2ms)[0m  [1mSELECT  "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUserCard Load (0.4ms)[0m  SELECT  "user_cards".* FROM "user_cards"  ORDER BY "user_cards"."id" ASC LIMIT 1
+  [1m[36mUserCard Load (0.4ms)[0m  [1mSELECT  "user_cards".* FROM "user_cards"  ORDER BY "user_cards"."id" ASC LIMIT 1[0m
+  [1m[35mCard Load (0.2ms)[0m  SELECT  "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUserCard Load (0.4ms)[0m  [1mSELECT  "user_cards".* FROM "user_cards"  ORDER BY "user_cards"."id" ASC LIMIT 1[0m
+  [1m[35mCard Load (0.2ms)[0m  SELECT  "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUserCard Load (0.2ms)[0m  [1mSELECT "user_cards".* FROM "user_cards" WHERE "user_cards"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35mUserCard Load (0.4ms)[0m  SELECT "user_cards".* FROM "user_cards" WHERE "user_cards"."user_id" = $1  [["user_id", 1]]
+  [1m[36mCard Load (0.2ms)[0m  [1mSELECT  "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCard Load (0.1ms)[0m  SELECT  "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCard Load (0.1ms)[0m  [1mSELECT  "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCard Load (0.1ms)[0m  SELECT  "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" INNER JOIN "recipients" ON "users"."id" = "recipients"."recipient_id" WHERE "recipients"."sender_id" = $1  [["sender_id", 1]]
+  [1m[36mRecipient Load (0.2ms)[0m  [1mSELECT  "recipients".* FROM "recipients"  ORDER BY "recipients"."id" ASC LIMIT 1[0m
+  [1m[35mRecipient Load (0.4ms)[0m  SELECT  "recipients".* FROM "recipients"  ORDER BY "recipients"."id" ASC LIMIT 1
+  [1m[36mRecipient Load (0.4ms)[0m  [1mSELECT  "recipients".* FROM "recipients"  ORDER BY "recipients"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mRecipient Load (0.4ms)[0m  [1mSELECT  "recipients".* FROM "recipients"  ORDER BY "recipients"."id" ASC LIMIT 1 OFFSET 1[0m
+  [1m[35mRecipient Load (0.4ms)[0m  SELECT  "recipients".* FROM "recipients"  ORDER BY "recipients"."id" ASC LIMIT 1 OFFSET 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mRecipient Load (0.4ms)[0m  SELECT  "recipients".* FROM "recipients"  ORDER BY "recipients"."id" ASC LIMIT 1 OFFSET 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1 OFFSET 2
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1 OFFSET 3[0m
+  [1m[36m (19.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (17.7ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20160401202921)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (24.2ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "username" character varying, "email" character varying, "password" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160401202921"]]
+  [1m[36m (11.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateRecipients (20160401202925)
+  [1m[35m (5.7ms)[0m  BEGIN
+  [1m[36m (7.3ms)[0m  [1mCREATE TABLE "recipients" ("id" serial primary key, "sender_id" integer, "recipient_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160401202925"]]
+  [1m[36m (12.0ms)[0m  [1mCOMMIT[0m
+Migrating to CreateCards (20160401202940)
+  [1m[35m (5.9ms)[0m  BEGIN
+  [1m[36m (19.4ms)[0m  [1mCREATE TABLE "cards" ("id" serial primary key, "greeting" character varying, "message" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160401202940"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreateUserCards (20160401205059)
+  [1m[35m (5.3ms)[0m  BEGIN
+  [1m[36m (7.5ms)[0m  [1mCREATE TABLE "user_cards" ("id" serial primary key, "user_id" integer, "card_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160401205059"]]
+  [1m[36m (6.0ms)[0m  [1mCOMMIT[0m
+Migrating to CreateTemplates (20160401234008)
+  [1m[35m (5.7ms)[0m  BEGIN
+  [1m[36m (19.5ms)[0m  [1mCREATE TABLE "templates" ("id" serial primary key, "card_id" integer, "image" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160401234008"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'cards'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.5ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'recipients'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.7ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'templates'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.7ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'user_cards'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.5ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["username", "coline"], ["email", "coline@gmail.com"], ["password", "password"], ["created_at", "2016-04-03 23:15:26.159088"], ["updated_at", "2016-04-03 23:15:26.159088"]]
+  [1m[36m (6.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "bob"], ["email", "bob@gmail.com"], ["password", "password"], ["created_at", "2016-04-03 23:15:26.167359"], ["updated_at", "2016-04-03 23:15:26.167359"]]
+  [1m[35m (4.7ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["username", "davion"], ["email", "amya@waelchiblock.co"], ["password", "password"], ["created_at", "2016-04-03 23:15:26.622295"], ["updated_at", "2016-04-03 23:15:26.622295"]]
+  [1m[36m (5.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "stan"], ["email", "myrtice.homenick@gibson.name"], ["password", "password"], ["created_at", "2016-04-03 23:15:26.629893"], ["updated_at", "2016-04-03 23:15:26.629893"]]
+  [1m[35m (16.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["username", "rodrick.weber"], ["email", "armando@cronin.biz"], ["password", "password"], ["created_at", "2016-04-03 23:15:26.648147"], ["updated_at", "2016-04-03 23:15:26.648147"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "moie.cole"], ["email", "norene_mraz@rempel.name"], ["password", "password"], ["created_at", "2016-04-03 23:15:26.650832"], ["updated_at", "2016-04-03 23:15:26.650832"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["username", "baylee"], ["email", "abel@abbottprohaska.biz"], ["password", "password"], ["created_at", "2016-04-03 23:15:26.653435"], ["updated_at", "2016-04-03 23:15:26.653435"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "cards" ("greeting", "message", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["greeting", "hello"], ["message", "I miss you!"], ["created_at", "2016-04-03 23:15:26.665533"], ["updated_at", "2016-04-03 23:15:26.665533"]]
+  [1m[35m (5.7ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "cards" ("greeting", "message", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["greeting", "goodbye"], ["message", "I love you!"], ["created_at", "2016-04-03 23:15:26.673245"], ["updated_at", "2016-04-03 23:15:26.673245"]]
+  [1m[36m (6.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "cards" ("greeting", "message", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["greeting", "what's up"], ["message", "hello hello~"], ["created_at", "2016-04-03 23:15:26.680706"], ["updated_at", "2016-04-03 23:15:26.680706"]]
+  [1m[35m (4.8ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "cards" ("greeting", "message", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["greeting", "good to see you"], ["message", "come back soon!"], ["created_at", "2016-04-03 23:15:26.687013"], ["updated_at", "2016-04-03 23:15:26.687013"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (1.9ms)[0m  [1mINSERT INTO "recipients" ("recipient_id", "sender_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["recipient_id", 2], ["sender_id", 1], ["created_at", "2016-04-03 23:15:26.693504"], ["updated_at", "2016-04-03 23:15:26.693504"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "recipients" ("recipient_id", "sender_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["recipient_id", 2], ["sender_id", 1], ["created_at", "2016-04-03 23:15:26.697227"], ["updated_at", "2016-04-03 23:15:26.697227"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "recipients" ("recipient_id", "sender_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["recipient_id", 2], ["sender_id", 1], ["created_at", "2016-04-03 23:15:26.698752"], ["updated_at", "2016-04-03 23:15:26.698752"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "recipients" ("recipient_id", "sender_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["recipient_id", 2], ["sender_id", 1], ["created_at", "2016-04-03 23:15:26.700104"], ["updated_at", "2016-04-03 23:15:26.700104"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "user_cards" ("user_id", "card_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["card_id", 1], ["created_at", "2016-04-03 23:15:26.707027"], ["updated_at", "2016-04-03 23:15:26.707027"]]
+  [1m[35m (6.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "user_cards" ("user_id", "card_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 1], ["card_id", 2], ["created_at", "2016-04-03 23:15:26.715027"], ["updated_at", "2016-04-03 23:15:26.715027"]]
+  [1m[36m (11.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "user_cards" ("user_id", "card_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["card_id", 3], ["created_at", "2016-04-03 23:15:26.727532"], ["updated_at", "2016-04-03 23:15:26.727532"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_cards" ("user_id", "card_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 1], ["card_id", 4], ["created_at", "2016-04-03 23:15:26.729214"], ["updated_at", "2016-04-03 23:15:26.729214"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "templates" ("image", "card_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["image", "https://robohash.org/my-own-slug.png?size=50x50"], ["card_id", 1], ["created_at", "2016-04-03 23:15:26.736019"], ["updated_at", "2016-04-03 23:15:26.736019"]]
+  [1m[35m (6.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "templates" ("image", "card_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["image", "https://robohash.org/my-own-slug.png?size=50x50"], ["card_id", 1], ["created_at", "2016-04-03 23:15:26.743919"], ["updated_at", "2016-04-03 23:15:26.743919"]]
+  [1m[36m (11.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "templates" ("image", "card_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["image", "https://robohash.org/my-own-slug.png?size=50x50"], ["card_id", 1], ["created_at", "2016-04-03 23:15:26.757147"], ["updated_at", "2016-04-03 23:15:26.757147"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "templates" ("image", "card_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["image", "https://robohash.org/my-own-slug.png?size=50x50"], ["card_id", 1], ["created_at", "2016-04-03 23:15:26.759213"], ["updated_at", "2016-04-03 23:15:26.759213"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "templates" ("image", "card_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["image", "https://robohash.org/my-own-slug.png?size=50x50"], ["card_id", 1], ["created_at", "2016-04-03 23:15:26.761243"], ["updated_at", "2016-04-03 23:15:26.761243"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1 OFFSET 2
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1 OFFSET 3[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCard Load (0.5ms)[0m  SELECT "cards".* FROM "cards" INNER JOIN "user_cards" ON "cards"."id" = "user_cards"."card_id" WHERE "user_cards"."user_id" = $1  [["user_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCard Load (0.3ms)[0m  SELECT  "cards".* FROM "cards" INNER JOIN "user_cards" ON "cards"."id" = "user_cards"."card_id" WHERE "user_cards"."user_id" = $1  ORDER BY "cards"."id" ASC LIMIT 1  [["user_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCard Load (0.3ms)[0m  SELECT  "cards".* FROM "cards" INNER JOIN "user_cards" ON "cards"."id" = "user_cards"."card_id" WHERE "user_cards"."user_id" = $1  ORDER BY "cards"."id" ASC LIMIT 1  [["user_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUserCard Load (0.2ms)[0m  [1mSELECT "user_cards".* FROM "user_cards" WHERE "user_cards"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUserCard Load (0.2ms)[0m  [1mSELECT  "user_cards".* FROM "user_cards" WHERE "user_cards"."user_id" = $1  ORDER BY "user_cards"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUserCard Load (0.3ms)[0m  [1mSELECT  "user_cards".* FROM "user_cards" WHERE "user_cards"."user_id" = $1  ORDER BY "user_cards"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUserCard Load (0.2ms)[0m  [1mSELECT  "user_cards".* FROM "user_cards" WHERE "user_cards"."user_id" = $1  ORDER BY "user_cards"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUserCard Load (0.2ms)[0m  [1mSELECT  "user_cards".* FROM "user_cards" WHERE "user_cards"."user_id" = $1  ORDER BY "user_cards"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUserCard Load (0.2ms)[0m  [1mSELECT  "user_cards".* FROM "user_cards" WHERE "user_cards"."user_id" = $1  ORDER BY "user_cards"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mCard Load (0.2ms)[0m  SELECT  "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUserCard Load (0.2ms)[0m  SELECT  "user_cards".* FROM "user_cards" WHERE "user_cards"."user_id" = $1  ORDER BY "user_cards"."id" ASC LIMIT 1  [["user_id", 1]]
+  [1m[36mCard Load (0.2ms)[0m  [1mSELECT  "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUserCard Load (0.1ms)[0m  [1mSELECT  "user_cards".* FROM "user_cards" WHERE "user_cards"."user_id" = $1  ORDER BY "user_cards"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mCard Load (0.2ms)[0m  SELECT  "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUserCard Load (0.1ms)[0m  SELECT  "user_cards".* FROM "user_cards" WHERE "user_cards"."user_id" = $1  ORDER BY "user_cards"."id" ASC LIMIT 1  [["user_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUserCard Load (0.2ms)[0m  SELECT  "user_cards".* FROM "user_cards" WHERE "user_cards"."user_id" = $1  ORDER BY "user_cards"."id" ASC LIMIT 1  [["user_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" INNER JOIN "recipients" ON "users"."id" = "recipients"."recipient_id" WHERE "recipients"."sender_id" = $1  [["sender_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" INNER JOIN "recipients" ON "users"."id" = "recipients"."recipient_id" WHERE "recipients"."sender_id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["sender_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" INNER JOIN "recipients" ON "users"."id" = "recipients"."recipient_id" WHERE "recipients"."sender_id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["sender_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" INNER JOIN "recipients" ON "users"."id" = "recipients"."recipient_id" WHERE "recipients"."sender_id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["sender_id", 1]]
+  [1m[36mUserCard Load (0.2ms)[0m  [1mSELECT "user_cards".* FROM "user_cards" WHERE "user_cards"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mCard Load (0.3ms)[0m  [1mSELECT "cards".* FROM "cards" INNER JOIN "user_cards" ON "cards"."id" = "user_cards"."card_id" WHERE "user_cards"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "recipients" ON "users"."id" = "recipients"."recipient_id" WHERE "recipients"."sender_id" = $1[0m  [["sender_id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mCard Load (0.3ms)[0m  [1mSELECT "cards".* FROM "cards" INNER JOIN "user_cards" ON "cards"."id" = "user_cards"."card_id" WHERE "user_cards"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUserCard Load (0.2ms)[0m  [1mSELECT "user_cards".* FROM "user_cards" WHERE "user_cards"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUserCard Load (0.2ms)[0m  [1mSELECT  "user_cards".* FROM "user_cards" WHERE "user_cards"."user_id" = $1  ORDER BY "user_cards"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUserCard Load (0.2ms)[0m  [1mSELECT  "user_cards".* FROM "user_cards" WHERE "user_cards"."user_id" = $1  ORDER BY "user_cards"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mCard Load (0.3ms)[0m  SELECT  "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUserCard Load (0.1ms)[0m  SELECT  "user_cards".* FROM "user_cards" WHERE "user_cards"."user_id" = $1  ORDER BY "user_cards"."id" ASC LIMIT 1  [["user_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUserCard Load (0.2ms)[0m  SELECT  "user_cards".* FROM "user_cards" WHERE "user_cards"."user_id" = $1  ORDER BY "user_cards"."id" ASC LIMIT 1  [["user_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUserCard Load (0.2ms)[0m  SELECT  "user_cards".* FROM "user_cards" WHERE "user_cards"."user_id" = $1  ORDER BY "user_cards"."id" ASC LIMIT 1  [["user_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mRecipient Load (0.2ms)[0m  SELECT "recipients".* FROM "recipients" WHERE "recipients"."sender_id" = $1  [["sender_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mRecipient Load (0.2ms)[0m  SELECT "recipients".* FROM "recipients" WHERE "recipients"."recipient_id" = $1  [["recipient_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mRecipient Load (0.3ms)[0m  SELECT "recipients".* FROM "recipients" WHERE "recipients"."sender_id" = $1  [["sender_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" INNER JOIN "recipients" ON "users"."id" = "recipients"."recipient_id" WHERE "recipients"."sender_id" = $1  [["sender_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mRecipient Load (0.2ms)[0m  SELECT "recipients".* FROM "recipients" WHERE "recipients"."sender_id" = $1  [["sender_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mRecipient Load (0.2ms)[0m  SELECT  "recipients".* FROM "recipients" WHERE "recipients"."sender_id" = $1  ORDER BY "recipients"."id" ASC LIMIT 1  [["sender_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mRecipient Load (0.2ms)[0m  SELECT  "recipients".* FROM "recipients" WHERE "recipients"."sender_id" = $1  ORDER BY "recipients"."id" ASC LIMIT 1  [["sender_id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" INNER JOIN "recipients" ON "users"."id" = "recipients"."recipient_id" WHERE "recipients"."sender_id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["sender_id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mRecipient Load (0.5ms)[0m  [1mSELECT  "recipients".* FROM "recipients" WHERE "recipients"."sender_id" = $1  ORDER BY "recipients"."id" ASC LIMIT 1[0m  [["sender_id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mRecipient Load (0.2ms)[0m  SELECT  "recipients".* FROM "recipients" WHERE "recipients"."sender_id" = $1  ORDER BY "recipients"."id" ASC LIMIT 1  [["sender_id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mRecipient Load (0.2ms)[0m  [1mSELECT  "recipients".* FROM "recipients" WHERE "recipients"."sender_id" = $1  ORDER BY "recipients"."id" ASC LIMIT 1[0m  [["sender_id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mRecipient Load (0.2ms)[0m  [1mSELECT  "recipients".* FROM "recipients" WHERE "recipients"."sender_id" = $1  ORDER BY "recipients"."id" ASC LIMIT 1[0m  [["sender_id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mRecipient Load (0.2ms)[0m  [1mSELECT  "recipients".* FROM "recipients" WHERE "recipients"."sender_id" = $1  ORDER BY "recipients"."id" ASC LIMIT 1[0m  [["sender_id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mRecipient Load (0.2ms)[0m  [1mSELECT "recipients".* FROM "recipients" WHERE "recipients"."sender_id" = $1[0m  [["sender_id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUserCard Load (0.2ms)[0m  [1mSELECT "user_cards".* FROM "user_cards" WHERE "user_cards"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "recipients" ON "users"."id" = "recipients"."recipient_id" WHERE "recipients"."sender_id" = $1[0m  [["sender_id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mRecipient Load (0.2ms)[0m  SELECT "recipients".* FROM "recipients" WHERE "recipients"."sender_id" = $1  [["sender_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" INNER JOIN "recipients" ON "users"."id" = "recipients"."recipient_id" WHERE "recipients"."sender_id" = $1  [["sender_id", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" INNER JOIN "recipients" ON "users"."id" = "recipients"."recipient_id" WHERE "recipients"."sender_id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["sender_id", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" INNER JOIN "recipients" ON "users"."id" = "recipients"."recipient_id" WHERE "recipients"."sender_id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["sender_id", 1]]
+  [1m[36mUserCard Load (0.2ms)[0m  [1mSELECT "user_cards".* FROM "user_cards" WHERE "user_cards"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUserCard Load (0.2ms)[0m  [1mSELECT "user_cards".* FROM "user_cards" WHERE "user_cards"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUserCard Load (0.2ms)[0m  [1mSELECT  "user_cards".* FROM "user_cards" WHERE "user_cards"."user_id" = $1  ORDER BY "user_cards"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUserCard Load (0.1ms)[0m  [1mSELECT  "user_cards".* FROM "user_cards" WHERE "user_cards"."user_id" = $1  ORDER BY "user_cards"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mCard Load (0.2ms)[0m  SELECT  "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUserCard Load (0.2ms)[0m  SELECT  "user_cards".* FROM "user_cards" WHERE "user_cards"."user_id" = $1  ORDER BY "user_cards"."id" ASC LIMIT 1  [["user_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUserCard Load (0.2ms)[0m  SELECT  "user_cards".* FROM "user_cards" WHERE "user_cards"."user_id" = $1  ORDER BY "user_cards"."id" ASC LIMIT 1  [["user_id", 1]]
+  [1m[36m (13.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (18.2ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20160401202921)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (25.3ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "username" character varying, "email" character varying, "password" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160401202921"]]
+  [1m[36m (16.9ms)[0m  [1mCOMMIT[0m
+Migrating to CreateRecipients (20160401202925)
+  [1m[35m (5.9ms)[0m  BEGIN
+  [1m[36m (12.9ms)[0m  [1mCREATE TABLE "recipients" ("id" serial primary key, "sender_id" integer, "recipient_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160401202925"]]
+  [1m[36m (4.8ms)[0m  [1mCOMMIT[0m
+Migrating to CreateCards (20160401202940)
+  [1m[35m (6.0ms)[0m  BEGIN
+  [1m[36m (20.1ms)[0m  [1mCREATE TABLE "cards" ("id" serial primary key, "greeting" character varying, "message" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160401202940"]]
+  [1m[36m (1.7ms)[0m  [1mCOMMIT[0m
+Migrating to CreateUserCards (20160401205059)
+  [1m[35m (5.6ms)[0m  BEGIN
+  [1m[36m (7.6ms)[0m  [1mCREATE TABLE "user_cards" ("id" serial primary key, "user_id" integer, "card_id" integer, "recipient_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160401205059"]]
+  [1m[36m (10.2ms)[0m  [1mCOMMIT[0m
+Migrating to CreateTemplates (20160401234008)
+  [1m[35m (5.9ms)[0m  BEGIN
+  [1m[36m (18.7ms)[0m  [1mCREATE TABLE "templates" ("id" serial primary key, "card_id" integer, "image" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160401234008"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'cards'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.6ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'recipients'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.9ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'templates'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.9ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'user_cards'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.7ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["username", "coline"], ["email", "coline@gmail.com"], ["password", "password"], ["created_at", "2016-04-03 23:35:00.029693"], ["updated_at", "2016-04-03 23:35:00.029693"]]
+  [1m[36m (6.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "bob"], ["email", "bob@gmail.com"], ["password", "password"], ["created_at", "2016-04-03 23:35:00.038280"], ["updated_at", "2016-04-03 23:35:00.038280"]]
+  [1m[35m (4.8ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["username", "dallin.erdman"], ["email", "chanel@ankunding.co"], ["password", "password"], ["created_at", "2016-04-03 23:35:00.502132"], ["updated_at", "2016-04-03 23:35:00.502132"]]
+  [1m[36m (5.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "gregory_cole"], ["email", "laurel_zboncak@greenholt.com"], ["password", "password"], ["created_at", "2016-04-03 23:35:00.510150"], ["updated_at", "2016-04-03 23:35:00.510150"]]
+  [1m[35m (15.8ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["username", "afton_eichmann"], ["email", "mollie@willms.biz"], ["password", "password"], ["created_at", "2016-04-03 23:35:00.528162"], ["updated_at", "2016-04-03 23:35:00.528162"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "eugene"], ["email", "elva@pagac.org"], ["password", "password"], ["created_at", "2016-04-03 23:35:00.530332"], ["updated_at", "2016-04-03 23:35:00.530332"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["username", "kyle_koch"], ["email", "lexi@toy.net"], ["password", "password"], ["created_at", "2016-04-03 23:35:00.532136"], ["updated_at", "2016-04-03 23:35:00.532136"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "cards" ("greeting", "message", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["greeting", "hello"], ["message", "I miss you!"], ["created_at", "2016-04-03 23:35:00.541426"], ["updated_at", "2016-04-03 23:35:00.541426"]]
+  [1m[35m (6.0ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "cards" ("greeting", "message", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["greeting", "goodbye"], ["message", "I love you!"], ["created_at", "2016-04-03 23:35:00.549338"], ["updated_at", "2016-04-03 23:35:00.549338"]]
+  [1m[36m (6.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "cards" ("greeting", "message", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["greeting", "what's up"], ["message", "hello hello~"], ["created_at", "2016-04-03 23:35:00.556775"], ["updated_at", "2016-04-03 23:35:00.556775"]]
+  [1m[35m (4.9ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "cards" ("greeting", "message", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["greeting", "good to see you"], ["message", "come back soon!"], ["created_at", "2016-04-03 23:35:00.563424"], ["updated_at", "2016-04-03 23:35:00.563424"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "recipients" ("recipient_id", "sender_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["recipient_id", 2], ["sender_id", 1], ["created_at", "2016-04-03 23:35:00.568914"], ["updated_at", "2016-04-03 23:35:00.568914"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "recipients" ("recipient_id", "sender_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["recipient_id", 2], ["sender_id", 1], ["created_at", "2016-04-03 23:35:00.570881"], ["updated_at", "2016-04-03 23:35:00.570881"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "recipients" ("recipient_id", "sender_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["recipient_id", 2], ["sender_id", 1], ["created_at", "2016-04-03 23:35:00.572306"], ["updated_at", "2016-04-03 23:35:00.572306"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "recipients" ("recipient_id", "sender_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["recipient_id", 2], ["sender_id", 1], ["created_at", "2016-04-03 23:35:00.573753"], ["updated_at", "2016-04-03 23:35:00.573753"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "user_cards" ("user_id", "card_id", "recipient_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["card_id", 1], ["recipient_id", 2], ["created_at", "2016-04-03 23:35:00.581149"], ["updated_at", "2016-04-03 23:35:00.581149"]]
+  [1m[35m (6.0ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "user_cards" ("user_id", "card_id", "recipient_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["user_id", 1], ["card_id", 2], ["recipient_id", 2], ["created_at", "2016-04-03 23:35:00.588935"], ["updated_at", "2016-04-03 23:35:00.588935"]]
+  [1m[36m (11.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "user_cards" ("user_id", "card_id", "recipient_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["card_id", 3], ["recipient_id", 2], ["created_at", "2016-04-03 23:35:00.601790"], ["updated_at", "2016-04-03 23:35:00.601790"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_cards" ("user_id", "card_id", "recipient_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["user_id", 1], ["card_id", 4], ["recipient_id", 2], ["created_at", "2016-04-03 23:35:00.603391"], ["updated_at", "2016-04-03 23:35:00.603391"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "templates" ("image", "card_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["image", "https://robohash.org/my-own-slug.png?size=50x50"], ["card_id", 1], ["created_at", "2016-04-03 23:35:00.610099"], ["updated_at", "2016-04-03 23:35:00.610099"]]
+  [1m[35m (6.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "templates" ("image", "card_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["image", "https://robohash.org/my-own-slug.png?size=50x50"], ["card_id", 1], ["created_at", "2016-04-03 23:35:00.618185"], ["updated_at", "2016-04-03 23:35:00.618185"]]
+  [1m[36m (5.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "templates" ("image", "card_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["image", "https://robohash.org/my-own-slug.png?size=50x50"], ["card_id", 1], ["created_at", "2016-04-03 23:35:00.625220"], ["updated_at", "2016-04-03 23:35:00.625220"]]
+  [1m[35m (4.8ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "templates" ("image", "card_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["image", "https://robohash.org/my-own-slug.png?size=50x50"], ["card_id", 1], ["created_at", "2016-04-03 23:35:00.631481"], ["updated_at", "2016-04-03 23:35:00.631481"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "templates" ("image", "card_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["image", "https://robohash.org/my-own-slug.png?size=50x50"], ["card_id", 1], ["created_at", "2016-04-03 23:35:00.633236"], ["updated_at", "2016-04-03 23:35:00.633236"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (4.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.0ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20160401202921)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (3.0ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "username" character varying, "email" character varying, "password" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160401202921"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateRecipients (20160401202925)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (1.6ms)[0m  [1mCREATE TABLE "recipients" ("id" serial primary key, "sender_id" integer, "recipient_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160401202925"]]
+  [1m[36m (3.0ms)[0m  [1mCOMMIT[0m
+Migrating to CreateCards (20160401202940)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (2.9ms)[0m  [1mCREATE TABLE "cards" ("id" serial primary key, "greeting" character varying, "message" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160401202940"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to CreateUserCards (20160401205059)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (1.7ms)[0m  [1mCREATE TABLE "user_cards" ("id" serial primary key, "user_id" integer, "card_id" integer, "recipient_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160401205059"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to CreateTemplates (20160401234008)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (2.4ms)[0m  [1mCREATE TABLE "templates" ("id" serial primary key, "card_id" integer, "image" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160401234008"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'cards'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.7ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'recipients'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.6ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'templates'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.5ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'user_cards'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.4ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["username", "coline"], ["email", "coline@gmail.com"], ["password", "password"], ["created_at", "2016-04-03 23:35:17.239909"], ["updated_at", "2016-04-03 23:35:17.239909"]]
+  [1m[36m (6.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "bob"], ["email", "bob@gmail.com"], ["password", "password"], ["created_at", "2016-04-03 23:35:17.248111"], ["updated_at", "2016-04-03 23:35:17.248111"]]
+  [1m[35m (4.9ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["username", "uriah"], ["email", "lucinda@sipesmueller.com"], ["password", "password"], ["created_at", "2016-04-03 23:35:17.700413"], ["updated_at", "2016-04-03 23:35:17.700413"]]
+  [1m[36m (6.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "melia"], ["email", "daphney.conn@smith.info"], ["password", "password"], ["created_at", "2016-04-03 23:35:17.708773"], ["updated_at", "2016-04-03 23:35:17.708773"]]
+  [1m[35m (11.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["username", "madie"], ["email", "caie@fritsch.org"], ["password", "password"], ["created_at", "2016-04-03 23:35:17.722642"], ["updated_at", "2016-04-03 23:35:17.722642"]]
+  [1m[36m (4.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "nia.schaden"], ["email", "lambert@andersonkeler.biz"], ["password", "password"], ["created_at", "2016-04-03 23:35:17.729810"], ["updated_at", "2016-04-03 23:35:17.729810"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["username", "domenica_gulgowski"], ["email", "sheila@bartonstreich.net"], ["password", "password"], ["created_at", "2016-04-03 23:35:17.732110"], ["updated_at", "2016-04-03 23:35:17.732110"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "cards" ("greeting", "message", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["greeting", "hello"], ["message", "I miss you!"], ["created_at", "2016-04-03 23:35:17.741532"], ["updated_at", "2016-04-03 23:35:17.741532"]]
+  [1m[35m (5.8ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "cards" ("greeting", "message", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["greeting", "goodbye"], ["message", "I love you!"], ["created_at", "2016-04-03 23:35:17.749379"], ["updated_at", "2016-04-03 23:35:17.749379"]]
+  [1m[36m (6.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "cards" ("greeting", "message", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["greeting", "what's up"], ["message", "hello hello~"], ["created_at", "2016-04-03 23:35:17.757119"], ["updated_at", "2016-04-03 23:35:17.757119"]]
+  [1m[35m (4.9ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "cards" ("greeting", "message", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["greeting", "good to see you"], ["message", "come back soon!"], ["created_at", "2016-04-03 23:35:17.763646"], ["updated_at", "2016-04-03 23:35:17.763646"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "recipients" ("recipient_id", "sender_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["recipient_id", 2], ["sender_id", 1], ["created_at", "2016-04-03 23:35:17.769505"], ["updated_at", "2016-04-03 23:35:17.769505"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "recipients" ("recipient_id", "sender_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["recipient_id", 2], ["sender_id", 1], ["created_at", "2016-04-03 23:35:17.771828"], ["updated_at", "2016-04-03 23:35:17.771828"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "recipients" ("recipient_id", "sender_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["recipient_id", 2], ["sender_id", 1], ["created_at", "2016-04-03 23:35:17.773205"], ["updated_at", "2016-04-03 23:35:17.773205"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "recipients" ("recipient_id", "sender_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["recipient_id", 2], ["sender_id", 1], ["created_at", "2016-04-03 23:35:17.774617"], ["updated_at", "2016-04-03 23:35:17.774617"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "user_cards" ("user_id", "card_id", "recipient_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["card_id", 1], ["recipient_id", 2], ["created_at", "2016-04-03 23:35:17.782082"], ["updated_at", "2016-04-03 23:35:17.782082"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_cards" ("user_id", "card_id", "recipient_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["user_id", 1], ["card_id", 2], ["recipient_id", 2], ["created_at", "2016-04-03 23:35:17.784123"], ["updated_at", "2016-04-03 23:35:17.784123"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_cards" ("user_id", "card_id", "recipient_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["card_id", 3], ["recipient_id", 2], ["created_at", "2016-04-03 23:35:17.785597"], ["updated_at", "2016-04-03 23:35:17.785597"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_cards" ("user_id", "card_id", "recipient_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["user_id", 1], ["card_id", 4], ["recipient_id", 2], ["created_at", "2016-04-03 23:35:17.786996"], ["updated_at", "2016-04-03 23:35:17.786996"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "templates" ("image", "card_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["image", "https://robohash.org/my-own-slug.png?size=50x50"], ["card_id", 1], ["created_at", "2016-04-03 23:35:17.793494"], ["updated_at", "2016-04-03 23:35:17.793494"]]
+  [1m[35m (6.0ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "templates" ("image", "card_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["image", "https://robohash.org/my-own-slug.png?size=50x50"], ["card_id", 1], ["created_at", "2016-04-03 23:35:17.801158"], ["updated_at", "2016-04-03 23:35:17.801158"]]
+  [1m[36m (6.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "templates" ("image", "card_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["image", "https://robohash.org/my-own-slug.png?size=50x50"], ["card_id", 1], ["created_at", "2016-04-03 23:35:17.809011"], ["updated_at", "2016-04-03 23:35:17.809011"]]
+  [1m[35m (4.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "templates" ("image", "card_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["image", "https://robohash.org/my-own-slug.png?size=50x50"], ["card_id", 1], ["created_at", "2016-04-03 23:35:17.815073"], ["updated_at", "2016-04-03 23:35:17.815073"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "templates" ("image", "card_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["image", "https://robohash.org/my-own-slug.png?size=50x50"], ["card_id", 1], ["created_at", "2016-04-03 23:35:17.816685"], ["updated_at", "2016-04-03 23:35:17.816685"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUserCard Load (0.5ms)[0m  [1mSELECT "user_cards".* FROM "user_cards" WHERE "user_cards"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUserCard Load (0.2ms)[0m  [1mSELECT  "user_cards".* FROM "user_cards" WHERE "user_cards"."user_id" = $1  ORDER BY "user_cards"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUserCard Load (0.2ms)[0m  [1mSELECT  "user_cards".* FROM "user_cards" WHERE "user_cards"."user_id" = $1  ORDER BY "user_cards"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mRecipient Load (0.3ms)[0m  SELECT  "recipients".* FROM "recipients" WHERE "recipients"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUserCard Load (0.2ms)[0m  SELECT  "user_cards".* FROM "user_cards" WHERE "user_cards"."user_id" = $1  ORDER BY "user_cards"."id" ASC LIMIT 1  [["user_id", 1]]
+  [1m[36mRecipient Load (0.2ms)[0m  [1mSELECT  "recipients".* FROM "recipients" WHERE "recipients"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUserCard Load (0.2ms)[0m  [1mSELECT  "user_cards".* FROM "user_cards" WHERE "user_cards"."user_id" = $1  ORDER BY "user_cards"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mRecipient Load (0.2ms)[0m  SELECT  "recipients".* FROM "recipients" WHERE "recipients"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUserCard Load (0.2ms)[0m  SELECT  "user_cards".* FROM "user_cards" WHERE "user_cards"."user_id" = $1  ORDER BY "user_cards"."id" ASC LIMIT 1  [["user_id", 1]]
+  [1m[36mRecipient Load (0.2ms)[0m  [1mSELECT  "recipients".* FROM "recipients" WHERE "recipients"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUserCard Load (0.2ms)[0m  [1mSELECT  "user_cards".* FROM "user_cards" WHERE "user_cards"."user_id" = $1  ORDER BY "user_cards"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mRecipient Load (0.2ms)[0m  SELECT  "recipients".* FROM "recipients" WHERE "recipients"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUserCard Load (0.2ms)[0m  SELECT  "user_cards".* FROM "user_cards" WHERE "user_cards"."user_id" = $1  ORDER BY "user_cards"."id" ASC LIMIT 1  [["user_id", 1]]
+  [1m[36mRecipient Load (0.2ms)[0m  [1mSELECT  "recipients".* FROM "recipients" WHERE "recipients"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUserCard Load (0.2ms)[0m  [1mSELECT  "user_cards".* FROM "user_cards" WHERE "user_cards"."user_id" = $1  ORDER BY "user_cards"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mRecipient Load (0.1ms)[0m  SELECT  "recipients".* FROM "recipients" WHERE "recipients"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUserCard Load (0.3ms)[0m  SELECT  "user_cards".* FROM "user_cards" WHERE "user_cards"."user_id" = $1  ORDER BY "user_cards"."id" ASC LIMIT 1  [["user_id", 1]]
+  [1m[36mRecipient Load (0.2ms)[0m  [1mSELECT  "recipients".* FROM "recipients" WHERE "recipients"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUserCard Load (0.2ms)[0m  [1mSELECT  "user_cards".* FROM "user_cards" WHERE "user_cards"."user_id" = $1  ORDER BY "user_cards"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUserCard Load (0.1ms)[0m  [1mSELECT  "user_cards".* FROM "user_cards" WHERE "user_cards"."user_id" = $1  ORDER BY "user_cards"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mRecipient Load (0.1ms)[0m  SELECT  "recipients".* FROM "recipients" WHERE "recipients"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUserCard Load (0.1ms)[0m  SELECT  "user_cards".* FROM "user_cards" WHERE "user_cards"."user_id" = $1  ORDER BY "user_cards"."id" ASC LIMIT 1  [["user_id", 1]]
+  [1m[36mRecipient Load (0.1ms)[0m  [1mSELECT  "recipients".* FROM "recipients" WHERE "recipients"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUserCard Load (0.1ms)[0m  [1mSELECT  "user_cards".* FROM "user_cards" WHERE "user_cards"."user_id" = $1  ORDER BY "user_cards"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mRecipient Load (0.1ms)[0m  SELECT  "recipients".* FROM "recipients" WHERE "recipients"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUserCard Load (0.2ms)[0m  SELECT  "user_cards".* FROM "user_cards" WHERE "user_cards"."user_id" = $1  ORDER BY "user_cards"."id" ASC LIMIT 1  [["user_id", 1]]
+  [1m[36mRecipient Load (0.2ms)[0m  [1mSELECT  "recipients".* FROM "recipients" WHERE "recipients"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUserCard Load (0.2ms)[0m  [1mSELECT  "user_cards".* FROM "user_cards" WHERE "user_cards"."user_id" = $1  ORDER BY "user_cards"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mRecipient Load (0.1ms)[0m  SELECT  "recipients".* FROM "recipients" WHERE "recipients"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUserCard Load (0.1ms)[0m  SELECT  "user_cards".* FROM "user_cards" WHERE "user_cards"."user_id" = $1  ORDER BY "user_cards"."id" ASC LIMIT 1  [["user_id", 1]]
+  [1m[36mRecipient Load (0.1ms)[0m  [1mSELECT  "recipients".* FROM "recipients" WHERE "recipients"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUserCard Load (0.2ms)[0m  [1mSELECT  "user_cards".* FROM "user_cards" WHERE "user_cards"."user_id" = $1  ORDER BY "user_cards"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mRecipient Load (0.3ms)[0m  SELECT  "recipients".* FROM "recipients" WHERE "recipients"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUserCard Load (0.2ms)[0m  [1mSELECT  "user_cards".* FROM "user_cards" WHERE "user_cards"."user_id" = $1  ORDER BY "user_cards"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mRecipient Load (0.1ms)[0m  SELECT  "recipients".* FROM "recipients" WHERE "recipients"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUserCard Load (0.2ms)[0m  SELECT  "user_cards".* FROM "user_cards" WHERE "user_cards"."user_id" = $1  ORDER BY "user_cards"."id" ASC LIMIT 1  [["user_id", 1]]
+  [1m[36mRecipient Load (0.1ms)[0m  [1mSELECT  "recipients".* FROM "recipients" WHERE "recipients"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUserCard Load (0.1ms)[0m  SELECT  "user_cards".* FROM "user_cards" WHERE "user_cards"."user_id" = $1  ORDER BY "user_cards"."id" ASC LIMIT 1  [["user_id", 1]]
+  [1m[36mRecipient Load (0.1ms)[0m  [1mSELECT  "recipients".* FROM "recipients" WHERE "recipients"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUserCard Load (0.1ms)[0m  SELECT  "user_cards".* FROM "user_cards" WHERE "user_cards"."user_id" = $1  ORDER BY "user_cards"."id" ASC LIMIT 1  [["user_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUserCard Load (0.2ms)[0m  SELECT  "user_cards".* FROM "user_cards" WHERE "user_cards"."user_id" = $1  ORDER BY "user_cards"."id" ASC LIMIT 1  [["user_id", 1]]
+  [1m[36mCard Load (0.3ms)[0m  [1mSELECT  "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT 1[0m  [["id", 1]]
+
+
+Started GET "/cards/sent" for ::1 at 2016-04-03 16:55:46 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+AbstractController::ActionNotFound (The action 'show' could not be found for CardsController):
+  actionpack (4.2.6) lib/abstract_controller/base.rb:132:in `process'
+  actionview (4.2.6) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.6) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.6) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.6) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:74:in `call'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.6) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.6) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/colineforde/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/colineforde/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/colineforde/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/colineforde/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (1.5ms)
+  Rendered /Users/colineforde/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/colineforde/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/colineforde/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/colineforde/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/colineforde/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (546.1ms)
+  Rendered /Users/colineforde/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/colineforde/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/colineforde/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (632.1ms)
+
+
+Started GET "/cards/sent" for ::1 at 2016-04-03 16:56:29 -0700
+Processing by CardsController#sent as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUserCard Load (0.3ms)[0m  [1mSELECT "user_cards".* FROM "user_cards" WHERE "user_cards"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35mRecipient Load (0.3ms)[0m  SELECT  "recipients".* FROM "recipients" WHERE "recipients"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCard Load (0.2ms)[0m  SELECT  "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "recipients".* FROM "recipients" WHERE "recipients"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCard Load (0.2ms)[0m  [1mSELECT  "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "recipients".* FROM "recipients" WHERE "recipients"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCard Load (0.2ms)[0m  SELECT  "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "recipients".* FROM "recipients" WHERE "recipients"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCard Load (0.2ms)[0m  [1mSELECT  "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered cards/sent.html.erb within layouts/application (37.3ms)
+Completed 200 OK in 403ms (Views: 356.1ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/assets/card.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-03 16:56:29 -0700
+
+
+Started GET "/assets/templates.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-03 16:56:29 -0700
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-03 16:56:29 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-04-03 16:56:29 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-03 16:56:29 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-03 16:56:29 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-03 16:56:29 -0700
+
+
+Started GET "/assets/card.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-03 16:56:29 -0700
+
+
+Started GET "/assets/templates.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-03 16:56:29 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-03 16:56:29 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-04-03 16:56:29 -0700
+
+
+Started GET "/cards/sent" for ::1 at 2016-04-03 17:07:52 -0700
+Processing by CardsController#sent as HTML
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mUserCard Load (0.4ms)[0m  [1mSELECT "user_cards".* FROM "user_cards" WHERE "user_cards"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35mRecipient Load (0.4ms)[0m  SELECT  "recipients".* FROM "recipients" WHERE "recipients"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCard Load (0.5ms)[0m  SELECT  "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "recipients".* FROM "recipients" WHERE "recipients"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCard Load (0.2ms)[0m  [1mSELECT  "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "recipients".* FROM "recipients" WHERE "recipients"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCard Load (0.1ms)[0m  SELECT  "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "recipients".* FROM "recipients" WHERE "recipients"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCard Load (0.1ms)[0m  [1mSELECT  "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered cards/sent.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 130ms (Views: 104.4ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/assets/card.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-03 17:07:53 -0700
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-03 17:07:53 -0700
+
+
+Started GET "/assets/templates.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-03 17:07:53 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-04-03 17:07:53 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-03 17:07:53 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-03 17:07:53 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-03 17:07:53 -0700
+
+
+Started GET "/assets/card.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-03 17:07:53 -0700
+
+
+Started GET "/assets/templates.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-03 17:07:53 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-03 17:07:53 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-04-03 17:07:53 -0700
