@@ -7,8 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-User.create!(username: "coline", email: "coline@gmail.com", password: "password")
-User.create!(username: "bob", email: "bob@gmail.com", password: "password")
+User.create!(username: "coline", email: "coline@gmail.com", phone: '1234567',password: "password")
+User.create!(username: "bob", email: "bob@gmail.com", phone: '123455543', password: "password")
 5.times{User.create!(username: Faker::Internet.user_name, email: Faker::Internet.email, password: "password")}
 Card.create!(greeting: "hello", message: "I miss you!")
 Card.create!(greeting: "goodbye", message: "I love you!")
