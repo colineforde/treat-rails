@@ -22,4 +22,4 @@ UserCard.create!(user_id: 1, card_id: 1, recipient_id: 2)
 UserCard.create!(user_id: 1, card_id: 2, recipient_id: 2)
 UserCard.create!(user_id: 1, card_id: 3, recipient_id: 2)
 UserCard.create!(user_id: 1, card_id: 4, recipient_id: 2)
-5.times{Template.create!(image: "https://robohash.org/my-own-slug.png?size=50x50", card_id: 1)}
+5.times{Template.create!(image: "https://robohash.org/my-own-slug.png?size=50x50")}

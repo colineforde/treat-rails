@@ -4,6 +4,7 @@ class CreateUserCards < ActiveRecord::Migration
     	t.integer :user_id
     	t.integer :card_id
     	t.integer :recipient_id
+    	t.integer :template_id
 
       t.timestamps null: false
     end
