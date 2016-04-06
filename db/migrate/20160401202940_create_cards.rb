@@ -3,6 +3,7 @@ class CreateCards < ActiveRecord::Migration
     create_table :cards do |t|
     	t.string :greeting
     	t.string :message
+      # t.string :name
 
       t.timestamps null: false
     end
