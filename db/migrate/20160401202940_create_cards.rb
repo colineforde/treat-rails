@@ -1,8 +1,9 @@
 class CreateCards < ActiveRecord::Migration
   def change
     create_table :cards do |t|
-    	t.string :greeting
     	t.string :message
+    	t.string :greeting
+    	t.integer :template_id
 
       t.timestamps null: false
     end
