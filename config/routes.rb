@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
+  resources :sessions, only: [:new, :create, :destroy]
+
   namespace 'cards' do 
     get 'sent'
   end
@@ -13,9 +15,11 @@ Rails.application.routes.draw do
       get 'sent'
     end
   end
-  resources :templates
+  resources :templates do 
+    resources :user_cards, only: [:new, :index]
+  end
   root 'welcome#index'
-  resources :sessions, only: [:create, :destroy]
+  # resources :sessions, only: [:create, :destroy]
 
 # 
   # Example of regular route:

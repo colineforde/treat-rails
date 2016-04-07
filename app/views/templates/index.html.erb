@@ -1,0 +1,7 @@
+Choose a Template:
+<br>
+<% @templates.each do |template| %>
+ <a href="/templates/<%= template.id %>/new"><img src="<%= template.image %>"></a>
+ <br>
+ <br>
+<% end %>

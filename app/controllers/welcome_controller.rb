@@ -1,6 +1,5 @@
 class WelcomeController < ApplicationController
 	def index
-		@user = User.first
-		render json: @user
+		redirect_to '/sessions/new'
 	end
 end
