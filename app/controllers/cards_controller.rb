@@ -15,4 +15,9 @@ class CardsController < ApplicationController
 
 	def show
 	end
+
+	def new
+		@card_template = Template.find(params[:template_id])
+	end
+	
 end

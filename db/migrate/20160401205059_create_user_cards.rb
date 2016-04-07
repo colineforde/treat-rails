@@ -10,3 +10,8 @@ class CreateUserCards < ActiveRecord::Migration
     end
   end
 end
+
+
+#/users/:id/sent
+#to - phone number of the recipient, occasion - string from - phone number, message, card_id - 
+#/users/:id/received

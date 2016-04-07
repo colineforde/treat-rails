@@ -4,6 +4,7 @@ class CreateCards < ActiveRecord::Migration
     	t.string :message
     	t.string :greeting
     	t.integer :template_id
+    	t.string :occasion
 
       t.timestamps null: false
     end

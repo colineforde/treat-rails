@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20160401234008) do
     t.string   "message"
     t.string   "greeting"
     t.integer  "template_id"
+    t.string   "occasion"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

@@ -10,17 +10,18 @@ Rails.application.routes.draw do
     get 'sent'
   end
   # resources :cards
-  resources :users do 
-    resources :cards do 
-      get 'sent'
-    end
-  end
-  resources :templates do 
-    resources :user_cards, only: [:new, :index]
+  resources :users
+  get '/users/:id/sent', to: 'users#sent'
+  get '/users/:id/received', to: 'users#received'
+
+  resources :templates, only: :index do 
+    resources :cards, only: [:new, :index]
   end
   root 'welcome#index'
   # resources :sessions, only: [:create, :destroy]
-
+#/users/:id/sent
+#to - phone number of the recipient, occasion - string from - phone number, message, card_id - 
+#/users/:id/received
 # 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -1,0 +1,12 @@
+Here are all the cards you sent:
+<br>
+
+<% @sent.each do |card| %>
+ <img src="<%= card.card.template_id %>">
+ <br>
+ <%= card.card.greeting %> 
+ <br>
+ <%= card.card.message %> 
+ <br>
+ <br>
+<% end %>

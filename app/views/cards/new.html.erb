@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(:card, url: new_card_path(User.find(1))) do |f| %>
+    	<img src="<%=@card_template.image%>"><br>
+      <%= f.label :to %><br>
+      <%= f.text_field :to, class: 'form-control' %><br>
+
+      <%= f.label :Message %><br>
+      <%= f.text_area :message, class: 'form-control' %><br>
+
+      <%= f.submit "Send Template", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+
